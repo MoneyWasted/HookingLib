@@ -21,13 +21,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -92,13 +92,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="hooking_internal.h" />
-    <ClInclude Include="framework.h" />
     <ClInclude Include="hooking.h" />
     <ClInclude Include="nmd_ldisasm.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="alloc.c" />
-    <ClCompile Include="HookingLib.cpp" />
+    <ClCompile Include="alloc.cpp" />
+    <ClCompile Include="hooking.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

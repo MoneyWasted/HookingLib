@@ -1,6 +1,7 @@
 #pragma once
-#ifndef  HOOKING_LIB
-#define  HOOKING_LIB
+
+#ifndef HOOKING_LIB
+#define HOOKING_LIB
 
 #include <cstdint>
 
@@ -11,9 +12,9 @@ struct pattern {
 typedef struct pattern Pattern;
 
 uintptr_t FindPattern(const char* pattern, const int offset);
-uintptr_t FindPattern(const pattern &pattern);
+uintptr_t FindPattern(const pattern& pattern);
 uintptr_t FindPatternEx(uintptr_t start, size_t len, const char* pattern, const int offset);
-uintptr_t FindPatternEx(uintptr_t start, size_t len, const pattern &pattern);
+uintptr_t FindPatternEx(uintptr_t start, size_t len, const pattern& pattern);
 uintptr_t NopInstruction(uintptr_t address);
 uintptr_t InsertHook(uintptr_t address, uintptr_t hook);
 uintptr_t InsertHookWithSkip(uintptr_t branchAddress, uintptr_t returnAddress, uintptr_t hook);
@@ -23,6 +24,6 @@ uintptr_t GetClassVftable(const char* className);
 uintptr_t InsertNearHook(uintptr_t address, uintptr_t hook);
 uintptr_t InsertNearHookWithSkip(uintptr_t branchAddress, uintptr_t returnAddress, uintptr_t hook);
 bool InitializeNearHooks();
-bool WriteForeignMemory(uintptr_t target, void* source, size_t length);
+bool WriteForeignMemory(uintptr_t target, const void* source, size_t length);
 
-#endif // ! HOOKING_LIB
+#endif
